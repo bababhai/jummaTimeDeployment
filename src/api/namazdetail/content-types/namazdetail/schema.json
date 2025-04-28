@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "namazdetails",
+  "info": {
+    "singularName": "namazdetail",
+    "pluralName": "namazdetails",
+    "displayName": "masjiddetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "masjidname": {
+      "type": "text"
+    },
+    "khutbastarttime": {
+      "type": "time"
+    },
+    "jamatstarttime": {
+      "type": "time"
+    },
+    "longitudelatitude": {
+      "type": "string"
+    },
+    "masjidaddress": {
+      "type": "text"
+    },
+    "credits": {
+      "type": "text"
+    }
+  }
+}

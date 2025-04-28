@@ -534,6 +534,40 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNamazdetailNamazdetail extends Struct.CollectionTypeSchema {
+  collectionName: 'namazdetails';
+  info: {
+    description: '';
+    displayName: 'masjiddetail';
+    pluralName: 'namazdetails';
+    singularName: 'namazdetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    credits: Schema.Attribute.Text;
+    jamatstarttime: Schema.Attribute.Time;
+    khutbastarttime: Schema.Attribute.Time;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::namazdetail.namazdetail'
+    > &
+      Schema.Attribute.Private;
+    longitudelatitude: Schema.Attribute.String;
+    masjidaddress: Schema.Attribute.Text;
+    masjidname: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1077,6 +1111,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::namazdetail.namazdetail': ApiNamazdetailNamazdetail;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
